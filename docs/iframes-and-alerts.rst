@@ -1,0 +1,69 @@
+.. Copyright 2012 splinter authors. All rights reserved.
+   Use of this source code is governed by a BSD-style
+   license that can be found in the LICENSE file.
+
+.. meta::
+    :description: Automatic interaction with alerts, prompts and iframes
+    :keywords: splinter, python, tutorial, alerts, prompts, iframes, acceptance tests
+
+++++++++++++++++++++++++++
+Frames, alerts and prompts
+++++++++++++++++++++++++++
+
+Using iframes
+-------------
+
+You can use the ``get_iframe`` method and the ``with`` statement to interact with iframes. You can pass the iframe's name, id, or index to ``get_iframe``.
+
+.. highlight:: python
+
+::
+
+    with browser.get_iframe('iframemodal') as iframe:
+        iframe.do_stuff()
+
+
+Handling alerts and prompts
+---------------------------
+
+    Chrome support for alerts and prompts is new in Splinter 0.4.
+
+**IMPORTANT:** Only webdrivers (Firefox and Chrome) has support for alerts and prompts.
+
+You can deal with alerts and prompts using the ``get_alert`` method.
+
+.. highlight:: python
+
+::
+
+    alert = browser.get_alert()
+    alert.text
+    alert.accept()
+    alert.dismiss()
+
+
+In case of prompts, you can answer it using the ``fill_with`` method.
+
+.. highlight:: python
+
+::
+
+    prompt = browser.get_alert()
+    prompt.text
+    prompt.fill_with('text')
+    prompt.accept()
+    prompt.dismiss()
+
+
+You can use the ``with`` statement to interacte with both alerts and prompts too.
+
+.. highlight:: python
+
+::
+
+    with browser.get_alert() as alert:
+        alert.do_stuff()
+
+If there's not any prompt or alert, ``get_alert`` will return ``None``.
+Remember to always use at least one of the alert/prompt ending methods (accept and dismiss).
+Otherwise your browser instance will be frozen until you accept or dismiss the alert/prompt correctly.
