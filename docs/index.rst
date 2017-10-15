@@ -9,10 +9,10 @@
 Splinter
 ==============
 
-Splinter is an open source tool for testing web applications using Python.
-It lets you automate browser actions, such as visiting URLs and interacting with their items.
+Splinter 是用 Python 开发的一个开源web自动化测试的工具集。
+它可以帮你自动化浏览器的行为，比如浏览 URLs 并和页面进行交互。
 
-Sample code
+简单的例子
 -----------
 
 .. highlight:: python
@@ -35,25 +35,25 @@ Sample code
         else:
             print("No, it wasn't found... We need to improve our SEO techniques")
 
-**Note:** if you don't provide any driver to ``Browser`` function, ``firefox`` will be used.
+**Note:** 如果你不为 ``Browser`` 提供driver参数, 那么会默认使用 ``firefox``.
 
-Features
+特点
 --------
 
-* simple api
-* multi webdrivers (chrome webdriver, firefox webdriver, phantomjs webdriver, zopetestbrowser, remote webdriver)
-* css and xpath selectors
-* support to iframe and alert
-* execute javascript
-* works with ajax and async javascript
+* 简单的 api
+* 支持多种 webdriver (chrome webdriver, firefox webdriver, phantomjs webdriver, zopetestbrowser, remote webdriver)
+* 支持 css 和 xpath 选择器
+* 支持 iframe 和 alert
+* 可执行 javascript 脚本
+* 支持 ajax 和 异步 javascript
 
-:doc:`what's new in splinter? </news>`
+:doc:`Splinter 有什么新特性? </news>`
 
-Getting started
+开始上手
 ---------------
-* :doc:`Why use Splinter </why>`
-* :doc:`Installation </install>`
-* :doc:`Quick tutorial </tutorial>`
+* :doc:`为什么使用 Splinter </why>`
+* :doc:`安装 </install>`
+* :doc:`快速上手 </tutorial>`
 
 Basic browsing and interactions
 -------------------------------
@@ -65,22 +65,21 @@ Basic browsing and interactions
 * :doc:`Verify the presence of texts and elements in a page, with matchers </matchers>`
 * :doc:`Cookies manipulation </cookies>`
 
-JavaScript support
+支持 JavaScript
 ------------------
 
-* :doc:`Executing JavaScript </javascript>`
+* :doc:`运行 JavaScript 脚本</javascript>`
 
-Walking on...
+继续...
 -------------
 
-* :doc:`Dealing with HTTP status code and exceptions </http-status-code-and-exception>`
-* :doc:`Interacting with iframes, alerts and prompts </iframes-and-alerts>`
-* :doc:`Full API documentation </api/index>`
+* :doc:`处理 HTTP 状态码和异常 </http-status-code-and-exception>`
+* :doc:`与 iframes, alerts 和 prompts 互动 </iframes-and-alerts>`
 
 Drivers
 -------
 
-Browser based drivers
+常用浏览器 drivers
 +++++++++++++++++++++
 
 The following drivers open a browser to run your actions:
@@ -89,7 +88,7 @@ The following drivers open a browser to run your actions:
 * :doc:`Firefox WebDriver </drivers/firefox>`
 * :doc:`Remote WebDriver </drivers/remote>`
 
-Headless drivers
+无界面浏览器 drivers
 ++++++++++++++++
 
 The following drivers don't open a browser to run your actions (but has its own dependencies, check the
@@ -101,13 +100,13 @@ specific docs for each driver):
 * :doc:`django client </drivers/django>`
 * :doc:`flask client </drivers/flask>`
 
-Remote driver
+远程 driver
 ++++++++++++++
 
 The remote driver uses Selenium Remote to control a web browser on a remote
 machine.
 
-* :doc:`Remote WebDriver </drivers/remote>`
+* :doc:`远程 WebDriver </drivers/remote>`
 
 
 Get in touch and contribute
