@@ -18,6 +18,7 @@ Splinter 是用 Python 开发的一个开源web自动化测试的工具集。
 .. highlight:: python
 
 ::
+
     from splinter import Browser
 
     with Browser() as browser:
