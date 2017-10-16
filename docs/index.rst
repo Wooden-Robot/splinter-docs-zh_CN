@@ -18,24 +18,24 @@ Splinter 是用 Python 开发的一个开源web自动化测试的工具集。
 .. highlight:: python
 
 ::
-
     from splinter import Browser
 
     with Browser() as browser:
-        # Visit URL
-        url = "http://www.google.com"
+        # 访问 URL
+        url = "http://baidu.com"
         browser.visit(url)
-        browser.fill('q', 'splinter - python acceptance testing for web applications')
-        # Find and click the 'search' button
-        button = browser.find_by_name('btnG')
-        # Interact with elements
+        browser.fill('wd', 'splinter - python acceptance testing for web applications')
+        # 找到并点击搜索按钮
+        button = browser.find_by_xpath('//input[@type="submit"]')
+        # 与元素交互
         button.click()
-        if browser.is_text_present('splinter.readthedocs.io'):
-            print("Yes, the official website was found!")
-        else:
-            print("No, it wasn't found... We need to improve our SEO techniques")
 
-**Note:** 如果你不为 ``Browser`` 提供driver参数, 那么会默认使用 ``firefox``.
+        if browser.is_text_present('splinter.readthedocs'):
+            print "Yes, the official website was found!"
+        else:
+            print "No, it wasn't found... We need to improve our SEO techniques"
+
+**提示:** 如果你不为 ``Browser`` 指定 driver, 那么会默认使用 ``firefox``。
 
 特点
 --------
@@ -55,7 +55,7 @@ Splinter 是用 Python 开发的一个开源web自动化测试的工具集。
 * :doc:`安装 </install>`
 * :doc:`快速上手 </tutorial>`
 
-Basic browsing and interactions
+基础的浏览和交互
 -------------------------------
 
 * :doc:`Browser and navigation </browser>`
