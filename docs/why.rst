@@ -1,29 +1,24 @@
 +++++++++++++++++
-Why use Splinter?
+为何使用Splinter?
 +++++++++++++++++
 
-Splinter is an abstraction layer on top of existing browser automation tools
-such as `Selenium`_, `PhantomJS`_ and `zope.testbrowser`_. It has a :doc:`high-level API
-</api/index>` that makes it easy to write automated tests of web applications.
+Splinter是现有浏览器之上抽象层自动化工具（如 `Selenium`_, `PhantomJS`_ 和 `zope.testbrowser`_ )。它具有 :doc:`高级API
+</api/index>` ，这使得它很容易去编写Web应用程序的自动化测试。
 
-For example, to fill out a form field with Splinter::
+例如, 用Splinter填写一个表单项::
 
     browser.fill('username', 'janedoe')
 
-In Selenium, the equivalent code would be::
+在Selenium中, 等效代码会是::
 
     elem = browser.find_element.by_name('username')
     elem.send_keys('janedoe')
 
-Because Splinter is an abstraction layer, it supports multiple web automation
-backends. With Splinter, you can use the same test code to do browser-based
-testing with Selenium as the backend and "headless" testing (no GUI) with
-zope.testbrowser as the backend.
+因为Splinter是一个抽象化层面, 它支持多种抽象化后端。使用Splinter，您可以使用相同的测试代码进行基于浏览器的测试，使用Selenium作为后端，并使用zope.testbrowser作为后端进行“headless”测试（无GUI）。
 
-Splinter has drivers for :doc:`Chrome </drivers/chrome>` and :doc:`Firefox
-</drivers/firefox>` for  browser-based testing, and :doc:`zope.testbrowser
-</drivers/zope.testbrowser>` and :doc:`PhantomJS </drivers/phantomjs>` for
-headless testing.
+Splinter 有 :doc:`Chrome </drivers/chrome>` 和 :doc:`Firefox
+</drivers/firefox>` for  的浏览器测试驱动,还有 :doc:`zope.testbrowser
+</drivers/zope.testbrowser>` 和 :doc:`PhantomJS </drivers/phantomjs>` 用于headless测试.
 
 
 .. _Selenium: http://seleniumhq.org
