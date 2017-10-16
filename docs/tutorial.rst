@@ -7,20 +7,20 @@
     :keywords: splinter, python, tutorial, documentation, web application, tests, atdd, tdd, acceptance tests
 
 +++++++++++++++++
-Splinter Tutorial
+Splinter 教程
 +++++++++++++++++
 
-Before starting, make sure Splinter is :doc:`installed </install>`
+开始之前, 确认已经:doc:`安装 </install>` Splinter
 
-This tutorial provides a simple example, teaching step by step how to:
+以下教程通过一个简单的例子一步一步教你如何使用 Splinter：
 
-* search for ``splinter - python acceptance testing for web applications'`` in google.com, and
-* find if splinter official website is listed among the search results
+* 通过 baidu.com 搜索 ``splinter - python acceptance testing for web applications``，
+* 查找 Splinter 官方网站是否在搜索结果中。
 
-Create a Browser instance
+创建一个 Browser 实例
 =========================
 
-First of all, import ``Browser`` class and instantiate it.
+首先, 导入 ``Browser`` 类并创建一个实例。
 
 .. highlight:: python
 
@@ -28,49 +28,51 @@ First of all, import ``Browser`` class and instantiate it.
 
     from splinter import Browser
     browser = Browser()
+    # 指定driver为chrome浏览器
+    # browser = Browser(driver_name='chrome')
 
-**Note:** if you don't provide any driver to ``Browser`` function, ``firefox`` will be used.
+**提示:** 如果你不为 ``Browser`` 指定 driver, 那么会默认使用 ``firefox``.
 
 
-Visit Google website
+访问百度搜索页面
 ====================
 
-Visit any website using the ``browser.visit`` method. Let's go to Google search page:
+使用 ``browser.visit`` 方法可访问任意网站. 让我们访问一下百度搜索页面:
 
 .. highlight:: python
 
 ::
 
-    browser.visit('http://google.com')
+    browser.visit('http://baidu.com')
 
 
-Input search text
+输入搜索关键词
 =================
 
-After a page is loaded, you can perform actions, such as clicking, filling text input, checking radio and checkbox. Let's fill Google's search field with ``splinter - python acceptance testing for web applications``:
+页面加载完毕后，你能进行一系列的交互，比如点击，输入框填充字段，选择单选按钮和复选框。让我们在百度搜索框中填充 ``splinter - python acceptance testing for web applications``。
 
 .. highlight:: python
 
 ::
 
-    browser.fill('q', 'splinter - python acceptance testing for web applications')
+    browser.fill('wd', 'splinter - python acceptance testing for web applications')
 
-Press the search button
+点击搜索按钮
 =======================
 
-Tell Splinter which button should be pressed. A button - or any other element - can be identified using its css, xpath, id, tag or name.
+告诉 Splinter 哪一个按钮需要点击。这个按钮 - 或任意其他元素 - 可以通过它的css, xpath, id, tag 或 name来识别。
 
-In order to find Google's search button, do:
+通过以下操作找到百度搜索按钮：
 
 .. highlight:: python
 
 ::
 
-    button = browser.find_by_name('btnG')
+    button = browser.find_by_xpath('//input[@type="submit"]')
 
-Note that this ``btnG`` was found looking at Google's page source code.
+提示一下，这个 ``btnG`` 会在百度搜索页面的源码中被找到。
 
-With the button in hands, we can then press it:
+找到按钮后，我们就可以进行点击操作:
 
 .. highlight:: python
 
@@ -79,36 +81,36 @@ With the button in hands, we can then press it:
     button.click()
 
 
-Note: Both steps presented above could be joined in a single line, such as:
+提示: 以上展示的两步可以结合为一行代码，如下所示:
 
 .. highlight:: python
 
 ::
 
-    browser.find_by_name('btnG').click()
+    browser.find_by_xpath('//input[@type="submit"]').click()
 
 
-Find out that Splinter official website is in the search results
+查看 Splinter 官方网站是否在搜索结果中
 ================================================================
 
-After pressing the button, you can check if Splinter official website is among the search responses. This can be done like this:
+点击搜索按钮后，你可以通过以下步骤检测 Splinter 官方网站是否在搜索结果中。
 
 .. highlight:: python
 
 ::
 
-    if browser.is_text_present('splinter.readthedocs.io'):
+    if browser.is_text_present('splinter.readthedocs'):
         print "Yes, found it! :)"
     else:
         print "No, didn't find it :("
 
 
-In this case, we are just printing something. You might use assertions, if you're writing tests.
+在这个小例子中, 我们只是打印出了结果. 当写测试的时候，你需要使用断言。
 
-Close the browser
+关闭浏览器
 =================
 
-When you've finished testing, close your browser using ``browser.quit``:
+结束测试后，我们需要使用 ``browser.quit`` 关闭浏览器:
 
 .. highlight:: python
 
@@ -116,10 +118,10 @@ When you've finished testing, close your browser using ``browser.quit``:
 
     browser.quit()
 
-All together
+总结
 ============
 
-Finally, the source code will be:
+最后完整的代码如下所示:
 
 .. highlight:: python
 
@@ -128,11 +130,11 @@ Finally, the source code will be:
     from splinter import Browser
 
     browser = Browser()
-    browser.visit('http://google.com')
-    browser.fill('q', 'splinter - python acceptance testing for web applications')
-    browser.find_by_name('btnG').click()
+    browser.visit('http://baidu.com')
+    browser.fill('wd', 'splinter - python acceptance testing for web applications')
+    button = browser.find_by_xpath('//input[@type="submit"]').click()
 
-    if browser.is_text_present('splinter.readthedocs.io'):
+    if browser.is_text_present('splinter.readthedocs'):
         print "Yes, the official website was found!"
     else:
         print "No, it wasn't found... We need to improve our SEO techniques"
