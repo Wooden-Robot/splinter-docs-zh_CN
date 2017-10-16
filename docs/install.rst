@@ -7,25 +7,25 @@
     :keywords: splinter, python, tutorial, how to install, installation
 
 +++++++++++++
-Install guide
+安装指南
 +++++++++++++
 
-Install Python
+安装 Python
 ==============
 
-In order to install Splinter, make sure Python is installed. Note: only Python 2.7+ is supported.
+安装Splinter之前，请确保电脑系统中已经安装了Python。注意：Splinter仅支持Python2.7以上版本。
 
-Download Python from http://www.python.org. If you’re using Linux or Mac OS X, it is probably already installed.
+您可从Python官方网站 http://www.python.org 下载Python。如果您使用的是类Linux或Mac OS X系统，则可能已经安装。
 
-Install splinter
+安装 splinter
 ================
 
-Basically, there are two ways to install Splinter:
+基本上有两种方式来安装Splinter：
 
-Install a stable release
+安装稳定版本
 ------------------------
 
-If you're interested on an official and almost bug-free version, just run from the Terminal:
+如果您对官方和几乎无错的版本感兴趣，只需从终端运行：
 
 
 .. highlight:: bash
@@ -36,10 +36,10 @@ If you're interested on an official and almost bug-free version, just run from t
 
 
 
-Install under-development source-code
+安装最新测试版本
 -------------------------------------
 
-Otherwise, if you want Splinter's latest-and-greatest features and aren't afraid of running under development code, run:
+如果您想使用Splinter的最新功能，并且不怕在自己的开发代码下运行，请运行：
 
 .. highlight:: bash
 
@@ -50,8 +50,8 @@ Otherwise, if you want Splinter's latest-and-greatest features and aren't afraid
     $ [sudo] python setup.py install
 
 
-**Notes:**
+**注意：**
 
-    * - make sure you have already :doc:`set up your development environment </contribute/setting-up-your-development-environment>`.
-    * - in this second case, make sure `Git <http://git-scm.com/>`_  is installed.
-    * - in order to use Chrome webdriver, you need to :doc:`setup Google Chrome properly </drivers/chrome>`.
+    * - 确保您已经 :doc:`设置了您的开发环境 </contribute/setting-up-your-development-environment>`.
+    * - 请确保已安装 `Git <http://git-scm.com/>`_ .
+    * - 为了使用Chrome浏览器，您需要 :doc:`正确设置Chrome </drivers/chrome>`.
