@@ -10,7 +10,7 @@
 Splinter 教程
 +++++++++++++++++
 
-开始之前, 确认已经:doc:`安装 </install>` Splinter
+开始之前, 确认已经 :doc:`安装 </install>` Splinter
 
 以下教程通过一个简单的例子一步一步教你如何使用 Splinter：
 
