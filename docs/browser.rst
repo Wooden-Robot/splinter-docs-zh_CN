@@ -7,10 +7,10 @@
     :keywords: splinter, python, tutorial, browser, firefox, chrome, zope, testebrowser
 
 +++++++
-Browser
+浏览器
 +++++++
 
-To use splinter you need create a Browser instance:
+要使用splinter，您需要创建一个Browser实例：
 
 .. highlight:: python
 
@@ -19,7 +19,7 @@ To use splinter you need create a Browser instance:
     from splinter import Browser
     browser = Browser()
 
-Or, you can use it by a ``context manager``, through the ``with`` statement:
+或者利用 ``context manager`` （上下文管理器）形式, 即通过 ``with`` 语句来实现:
 
 .. highlight:: python
 
@@ -29,10 +29,9 @@ Or, you can use it by a ``context manager``, through the ``with`` statement:
     with Browser() as b:
         # stuff using the browser
 
-This last example will create a new browser window and close it when the cursor
-reach the code outside the ``with`` statement, automatically.
+最后一个例子将会创建一个新的浏览器窗口，当光标到达 ``with`` 声明语句外部时关闭它。
 
-splinter support three drivers: chrome, firefox and zopetestbrowser
+splinter支持三种驱动程序：chrome，firefox和zopetestbrowser。
 
 .. highlight:: python
 
@@ -43,58 +42,56 @@ splinter support three drivers: chrome, firefox and zopetestbrowser
     browser = Browser('zope.testbrowser')
 
 =============================
-Navigating with Browser.visit
+用Browser.visit浏览
 =============================
 
-You can use the ``visit`` method to navigate to other pages:
+您可以使用该 ``visit`` 方法导航到其他页面：
 
 .. highlight:: python
 
 ::
 
-    browser.visit('http://cobrateam.info')
+    browser.visit('https://baidu.com')
 
-The ``visit`` method takes only a single parameter - the ``url`` to be visited.
+该 ``visit`` 方法只需要 ``url`` 这一个参数来访问。
 
-You can visit a site protected with basic HTTP authentication by providing the
-username and password in the url.
+您可以通过在URL中提供用户名和密码来访问受HTTP身份验证保护的站点。
 
 ::
 
-    browser.visit('http://username:password@cobrateam.info/protected')
+    browser.visit('http://username:password@xxxx.xx/protected')
 
 ================
-Managing Windows
+管理页面窗口
 ================
 
-You can manage multiple windows (such as popups) through the windows object:
+您可以通过Windows对象来管理多个窗口（如弹出窗口）：
 
 .. highlight:: python
 
 ::
 
-    browser.windows              # all open windows
-    browser.windows[0]           # the first window
-    browser.windows[window_name] # the window_name window
-    browser.windows.current      # the current window
-    browser.windows.current = browser.windows[3]  # set current window to window 3
+    browser.windows              # 获取全部窗口
+    browser.windows[0]           # 获取第一个窗口
+    browser.windows[window_name] # 获取指定窗口名的窗口
+    browser.windows.current      # 获取当前窗口
+    browser.windows.current = browser.windows[3]  # 设置当前窗口索引号为3
 
     window = browser.windows[0]
-    window.is_current            # boolean - whether window is current active window
-    window.is_current = True     # set this window to be current window
-    window.next                  # the next window
-    window.prev                  # the previous window
-    window.close()               # close this window
-    window.close_others()        # close all windows except this one
+    window.is_current            # 布尔判断 - 窗口是否为当前活动窗口
+    window.is_current = True     # 设置窗口为当前窗口
+    window.next                  # 下一个窗口
+    window.prev                  # 上一个窗口
+    window.close()               # 关闭窗口
+    window.close_others()        # 关闭所有其他窗口
 
-This window management interface is not compatible with the undocumented interface
-exposed in v0.6.0 and earlier.
+此窗口管理界面方法不兼容 splinter v0.6.0及更早版本。
 
 =============
-Reload a page
+重新加载页面
 =============
 
-You can reload a page using ``reload`` method:
+您可以使用 ``reload`` 方法重新加载页面：
 
 .. highlight:: python
 
@@ -103,10 +100,10 @@ You can reload a page using ``reload`` method:
     browser.reload()
 
 ============================
-Navigate through the history
+浏览历史
 ============================
 
-You can back and forward on your browsing history using ``back`` and ``forward`` methods:
+您可以使用 ``back`` 和 ``forward`` 方法来浏览历史记录:
 
 .. highlight:: python
 
@@ -121,7 +118,7 @@ You can back and forward on your browsing history using ``back`` and ``forward``
 Browser.title
 =============
 
-You can get the title of the visited page using the ``title`` attribute:
+您可以使用以下 ``title`` 属性获取访问页面的标题：
 
 .. highlight:: python
 
@@ -130,10 +127,10 @@ You can get the title of the visited page using the ``title`` attribute:
     browser.title
 
 ========================================
-Verifying page content with Browser.html
+使用Browser.html验证页面内容
 ========================================
 
-You can use the ``html`` attribute to get the html content of the visited page:
+您可以使用该 ``html`` 属性来获取访问页面的html内容：
 
 .. highlight:: python
 
@@ -142,10 +139,10 @@ You can use the ``html`` attribute to get the html content of the visited page:
     browser.html
 
 ===================================
-Verifying page url with Browser.url
+使用Browser.url验证页面网址
 ===================================
 
-The visited page's url can be accessed by the ``url`` attribute:
+访问页面的URL可以通过 ``url`` 属性访问：
 
 .. highlight:: python
 
@@ -154,10 +151,10 @@ The visited page's url can be accessed by the ``url`` attribute:
     browser.url
 
 ===========================
-Changing Browser User-Agent
+更改浏览器User-Agent
 ===========================
 
-You can pass User-Agent on Browser instantiation.
+您可以在浏览器实例化时传递User-Agent。
 
 .. highlight:: python
 
