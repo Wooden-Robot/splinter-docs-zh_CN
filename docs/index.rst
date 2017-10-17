@@ -36,7 +36,7 @@ Splinter 是用 Python 开发的一个开源web自动化测试的工具集。
         else:
             print "No, it wasn't found... We need to improve our SEO techniques"
 
-**提示:** 如果你不为 ``Browser`` 指定 driver, 那么会默认使用 ``firefox``。
+**注意:** 如果你不为 ``Browser`` 指定 driver, 那么会默认使用 ``firefox``。
 
 特点
 --------
@@ -59,9 +59,9 @@ Splinter 是用 Python 开发的一个开源web自动化测试的工具集。
 基础的浏览和交互
 -------------------------------
 
-* :doc:`Browser and navigation </browser>`
-* :doc:`Finding elements </finding>`
-* :doc:`Mouse interactions </mouse-interaction>`
+* :doc:`浏览器浏览网页 </browser>`
+* :doc:`获取页面元素 </finding>`
+* :doc:`鼠标交互 </mouse-interaction>`
 * :doc:`Interacting with elements and forms </elements-in-the-page>`
 * :doc:`Verify the presence of texts and elements in a page, with matchers </matchers>`
 * :doc:`Cookies manipulation </cookies>`
