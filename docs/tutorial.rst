@@ -31,7 +31,7 @@ Splinter 教程
     # 指定driver为chrome浏览器
     # browser = Browser(driver_name='chrome')
 
-**提示:** 如果你不为 ``Browser`` 指定 driver, 那么会默认使用 ``firefox``.
+**注意:** 如果你不为 ``Browser`` 指定 driver, 那么会默认使用 ``firefox``.
 
 
 访问百度搜索页面
@@ -70,7 +70,7 @@ Splinter 教程
 
     button = browser.find_by_xpath('//input[@type="submit"]')
 
-提示一下，这个 ``btnG`` 会在百度搜索页面的源码中被找到。
+提示一下，这个 ``//input[@type="submit"]`` xpath 语法所在的按钮会在百度搜索页面的源码中被找到。
 
 找到按钮后，我们就可以进行点击操作:
 
@@ -81,7 +81,7 @@ Splinter 教程
     button.click()
 
 
-提示: 以上展示的两步可以结合为一行代码，如下所示:
+注意: 以上展示的两步可以结合为一行代码，如下所示:
 
 .. highlight:: python
 

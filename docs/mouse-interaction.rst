@@ -7,19 +7,17 @@
     :keywords: splinter, python, tutorial, documentation, mouse interaction, mouseover, mouseout, double click, mouse events
 
 ++++++++++++++++++
-Mouse interactions
+鼠标交互
 ++++++++++++++++++
 
-    **Note:** Most mouse interaction currently works only on Chrome driver and Firefox 27.0.1.
+    **注意:** 大部分鼠标交互目前仅适用于Chrome driver和火狐浏览器27.0.1
 
-Splinter provides some methods for mouse interactions with elements in the page.
-This feature is useful to test if an element appears on mouse over and
-disappears on mouse out (eg.: subitems of a menu).
+Splinter提供了一些鼠标与页面元素交互的方法。
+这个功能有助于测试一个元素是否在鼠标移来时出现，移走时消失（例如：子菜单）。
 
-It's also possible to send a click, double click or right click to the element.
+你也可以对这个元素执行单击，双击或者右击操作。
 
-Here is a simple example: imagine you have this `jQuery <http://jquery.com>`_
-event for mouse over and out:
+举个简单例子: 假设你有这样一个 `jQuery <http://jquery.com>`_ 方法让鼠标移过来、移走:
 
 .. highlight:: js
 
@@ -33,82 +31,81 @@ event for mouse over and out:
         $(this).find('.subitem').hide();
     });
 
-You can use Splinter to fire the event programatically:
+你完全可以使用 Splinter 通过程序触发事件：
 
 .. highlight:: python
 
 ::
 
     browser.find_by_css('.menu-links').mouse_over()
-    # Code to check if the subitem is visible...
+    # 检测子菜单是否出现...
     browser.find_by_css('.menu-links').mouse_out()
 
 
-The methods available for mouse interactions are:
+可以通过下列方法实现鼠标交互:
 
-``mouse_over``
+``移过来``
 --------------
 
 .. highlight:: python
 
 
-Puts the mouse above the element. Example:
+将鼠标移到元素上方，例如:
 
 ::
 
     browser.find_by_tag('h1').mouse_over()
 
 
-``mouse_out``
+``移走``
 -------------
 
 .. highlight:: python
 
-Puts the mouse out of the element. Example:
+将鼠标从元素上移走，例如:
 
 ::
 
     browser.find_by_tag('h1').mouse_out()
 
-``click``
+``点击``
 ---------
 
 .. highlight:: python
 
-Clicks on the element. Example:
+点击元素，例如:
 
 ::
 
     browser.find_by_tag('h1').click()
 
-``double_click``
+``双击``
 ----------------
 
 .. highlight:: python
 
-Double-clicks on the element. Example:
+双击元素，例如:
 
 ::
 
     browser.find_by_tag('h1').double_click()
 
-``right_click``
+``右击``
 ---------------
 
 .. highlight:: python
 
-Right-clicks on the element. Example:
+右击元素，例如:
 
 ::
 
     browser.find_by_tag('h1').right_click()
 
-``drag_and_drop``
+``拖放``
 -----------------
 
-Yes, you can drag an element and drop it to another element! The example below
-drags the ``<h1>...</h1>`` element and drop it to a container element
-(identified by a CSS class).
+你可以拖动一个元素并将其放在另外一个元素上，下面例子将 ``<h1>...</h1>`` 元素拖放到容器元素中
+(由一个 CSS 类识别).
 
 .. highlight:: python
 
