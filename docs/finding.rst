@@ -7,13 +7,12 @@
     :keywords: splinter, python, tutorial, find, selectors
 
 ++++++++++++++++
-Finding elements
+查找元素
 ++++++++++++++++
 
-Splinter provides 6 methods for finding elements in the page, one for each
-selector type: ``css``, ``xpath``, ``tag``, ``name``, ``id``, ``value``,
+Splinter提供了6种方法用于查找在页面中的元素，并用于每个选择器类型：: ``css``, ``xpath``, ``tag``, ``name``, ``id``, ``value``,
 ``text``.
-Examples:
+例如:
 
 .. highlight:: python
 
@@ -28,8 +27,7 @@ Examples:
     browser.find_by_value('query')
 
 
-Each of these methods returns a list with the found elements. You can get the
-first found element with the ``first`` shortcut:
+这些方法中的每一个返回一个包含已找到元素的列表。您可以使用 ``first`` 快捷方式获取第一个找到的元素：
 
 .. highlight:: python
 
@@ -37,8 +35,7 @@ first found element with the ``first`` shortcut:
 
     first_found = browser.find_by_name('name').first
 
-There's also the ``last`` shortcut -- obviously, it returns the last found
-element:
+还有last快捷方式 ，它返回最后发现的目标元素：
 
 .. highlight:: python
 
@@ -46,12 +43,10 @@ element:
 
     last_found = browser.find_by_name('name').last
 
-
-Get element using index
+使用索引获取元素
 =======================
 
-You also can use an index to get the desired element in the list of found
-elements:
+您还可以使用索引，在所找到的元素列表中获取所需的元素：
 
 .. highlight:: python
 
@@ -59,18 +54,17 @@ elements:
 
     second_found = browser.find_by_name('name')[1]
 
-All elements and ``find_by_id``
+所有元素和 ``find_by_id``
 ===============================
 
-A web page should have only one id, so the ``find_by_id`` method returns always
-a list with just one element.
+一个网页应该只有一个id，所以该 ``find_by_id`` 方法总是只返回一个元素的列表。
 
-Finding links
+查找链接
 =============
 
-If you need to find the links in a page, you can use the methods
+如果你需要找到一个页面的链接，你可以使用以下方法：
 ``find_link_by_text``, ``find_link_by_partial_text``, ``find_link_by_href`` or
-``find_link_by_partial_href``. Examples:
+``find_link_by_partial_href``. 举例：
 
 .. highlight:: python
 
@@ -82,17 +76,16 @@ If you need to find the links in a page, you can use the methods
     links_found = browser.find_link_by_partial_href('example')
 
 
-As the other ``find_*`` methods, these returns a list of all found elements.
+作为其他 ``find_*`` 方法，它们返回所有找到的元素的列表。
 
-You also can search for links using other selector types with the methods
+您还可以搜索使用其他类型的选择与方法：
 ``find_by_css``, ``find_by_xpath``, ``find_by_tag``, ``find_by_name``,
-``find_by_value`` and ``find_by_id``.
+``find_by_value`` 和 ``find_by_id``.
 
-Chaining find of elements
+链式查找元素
 =========================
 
-Finding methods are chainable, so you can find the descendants of a previously
-found element.
+查找方法是可链式的，因此您可以找到先前发现的元素的后续属性。
 
 .. highlight:: python
 
@@ -101,9 +94,7 @@ found element.
     divs = browser.find_by_tag("div")
     within_elements = divs.first.find_by_name("name")
 
-``ElementDoesNotExist`` exception
+``ElementDoesNotExist`` 异常处理
 =================================
 
-If an element is not found, the ``find_*`` methods return an empty list. But
-if you try to access an element in this list, the method will raise the
-:class:`splinter.exceptions.ElementDoesNotExist` exception.
+如果未找到元素，则 ``find_*`` 返回空列表。但是，如果您尝试访问此列表中的元素，该方法将触发 `splinter.exceptions.ElementDoesNotExist` 异常。
