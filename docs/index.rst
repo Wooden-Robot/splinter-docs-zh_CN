@@ -62,8 +62,8 @@ Splinter 是用 Python 开发的一个开源web自动化测试的工具集。
 * :doc:`浏览器浏览网页 </browser>`
 * :doc:`获取页面元素 </finding>`
 * :doc:`鼠标交互 </mouse-interaction>`
-* :doc:`Interacting with elements and forms </elements-in-the-page>`
-* :doc:`Verify the presence of texts and elements in a page, with matchers </matchers>`
+* :doc:`与页面元素和表单交互 </elements-in-the-page>`
+* :doc:`使用 Matchers 检测文本和元素是否存在于页面中 </matchers>`
 * :doc:`Cookies manipulation </cookies>`
 
 支持 JavaScript

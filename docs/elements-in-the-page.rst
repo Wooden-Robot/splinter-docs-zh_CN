@@ -7,13 +7,13 @@
     :keywords: splinter, python, tutorial, documentation, forms, click links, get value
 
 +++++++++++++++++++++++++++++++++++++
-Interacting with elements in the page
+与页面中的元素交互
 +++++++++++++++++++++++++++++++++++++
 
-Get value of an element
+获取元素的内容
 -----------------------
 
-In order to retrieve an element's value, use the ``value`` property:
+可以通过 ``value`` 属性获取元素的内容:
 
 .. highlight:: python
 
@@ -31,11 +31,11 @@ or
     element.value
 
 
-Clicking links
+点击链接
 --------------
 
-You can click in links. To click in links by href, partial href, text or partial text you can use this.
-IMPORTANT: These methods return the first element always.
+你可以通过 href , partial href, text or partial text 来点击链接。
+切记: 这些方法永远返回获取到得第一个链接.
 
 .. highlight:: python
 
@@ -76,10 +76,10 @@ or
     browser.click_link_by_id('link_id')
 
 
-Clicking buttons
+点击按钮
 ----------------
 
-You can click in buttons. Splinter follows any redirects, and submits forms associated with buttons.
+Splinter 支持点击按钮后的重定向和提交表单。
 
 .. highlight:: python
 
@@ -96,7 +96,7 @@ or
     browser.find_link_by_text('my link').first.click()
 
 
-Interacting with forms
+表单交互
 ----------------------
 
 .. highlight:: python
@@ -110,7 +110,7 @@ Interacting with forms
     browser.uncheck('some-check')
     browser.select('uf', 'rj')
 
-To trigger JavaScript events, like KeyDown or KeyUp, you can use the `type` method.
+你可以使用 `type` 方法触发按下键或者按上键的 JavaScript 事件。
 
 .. highlight:: python
 
@@ -139,10 +139,10 @@ You can also use ``type`` and ``fill`` methods in an element:
     browser.find_by_css('.city').fill('San Francisco')
 
 
-Verifying if element is visible or invisible
+检测元素是否可见
 --------------------------------------------
 
-To check if an element is visible or invisible, use the ``visible`` property. For instance:
+使用 ``visible`` 属性检测元素是否可见。例如：
 
 .. highlight:: python
 
@@ -150,7 +150,7 @@ To check if an element is visible or invisible, use the ``visible`` property. Fo
 
     browser.find_by_css('h1').first.visible
 
-will be True if the element is visible, or False if it is invisible.
+如果元素可见会返回True，不可见则返回False。
 
 
 Verifying if element has a className
