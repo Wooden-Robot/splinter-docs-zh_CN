@@ -10,7 +10,7 @@
 Chrome WebDriver
 ++++++++++++++++
 
-Chrome WebDriver is provided by Selenium2. To use it, you need to install Selenium2 via pip:
+Chrome WebDriver 由 Selenium2 提供. 使用它需先通过 pip 安装 Selenium2：
 
 .. highlight:: bash
 
@@ -18,9 +18,9 @@ Chrome WebDriver is provided by Selenium2. To use it, you need to install Seleni
 
     $ [sudo] pip install selenium
 
-It's important to note that you also need to have Google Chrome installed in your machine.
+同时请确保你的电脑安装了谷歌浏览器.
 
-Chrome can also be used from a custom path. To do this pass the executable path as a dictionary to the `**kwargs` argument. The dictionary should be set up with `executable_path` as the key and the value set to the path to the executable file.
+我们可以在自定义路径中使用 Chrome，不过你需要将可执行路径作为字典传递给 `**kwargs` 参数. 将 `executable_path` 作为字典的key值，将可执行文件的路径设置为字典的Value。
 
 .. highlight:: python
 
@@ -31,17 +31,16 @@ Chrome can also be used from a custom path. To do this pass the executable path 
 
     browser = Browser('chrome', **executable_path)
 
-Setting up Chrome WebDriver
+设置 Chrome WebDriver
 ---------------------------
 
-In order to use `Google Chrome <http://google.com/chrome>`_ with Splinter, since we're using Selenium 2.3.x,
-you need to setup Chrome webdriver properly.
-
+在 Splinter 中使用 `Google Chrome <http://google.com/chrome>`_ , 我们需要使用 Selenium 2.3.x, 同时
+确保正确安装 Chrome webdriver。
 
 Mac OS X
 --------
 
-The recommended way is by using `Homebrew <http://mxcl.github.com/homebrew/>`_:
+推荐使用 `Homebrew <http://mxcl.github.com/homebrew/>`_ 进行安装:
 
 .. highlight:: bash
 
@@ -53,13 +52,13 @@ The recommended way is by using `Homebrew <http://mxcl.github.com/homebrew/>`_:
 Linux
 -----
 
-Go to the `download page on Chromium project <https://code.google.com/p/chromedriver/downloads/list>`_ and choose
-the properly version for you Linux (32 or 64 bits). Then extract the
-downloaded file in a directory in the ``PATH`` (e.g. ``/usr/bin``). You can also extract it to any directory
-and add that directory to the ``PATH``:
+去 `Chromium 下载页面<https://code.google.com/p/chromedriver/downloads/list>`_ 根据你
+的 Linux (32 or 64 位) 系统选择适合的版本。然后将解压后的文件移动到一个在 ``PATH`` 中的目录内
+(比如 ``/usr/bin``)。你也可以将其解压在任何目录下
+并将该目录添加到 ``PATH``:
 
 
-Linux 32bits
+Linux 32位
 ============
 
 .. highlight:: bash
@@ -71,7 +70,7 @@ Linux 32bits
     $ unzip chromedriver_linux32_20.0.1133.0.zip
 
 
-Linux 64bits
+Linux 64位
 ============
 
 .. highlight:: bash
@@ -83,7 +82,7 @@ Linux 64bits
     $ unzip chromedriver_linux64_20.0.1133.0.zip
 
 
-Linux (common steps for 32 and 64bits)
+Linux (32 和 64位通用步骤)
 ======================================
 
 .. highlight:: bash
@@ -98,22 +97,21 @@ Linux (common steps for 32 and 64bits)
 Windows
 -------
 
-    **Note:** We don't provide official support for Windows, but you can try it by yourself.
+    **注意:** 对于 Windows 用户，我们暂不提供官方支持，但您可以自行尝试。
 
-All you need to do is go to `download page on Selenium project <https://code.google.com/p/chromedriver/downloads/list>`_ and choose
-"ChromeDriver server for win". Your browser will download a zip file, extract it and add the ``.exe`` file to your PATH.
+你只需要去 `Selenium 项目下载页面 <https://code.google.com/p/chromedriver/downloads/list>`_ 下载
+"ChromeDriver server for win". 你的浏览器会下载 zip 文件, 解压并将这个 ``.exe`` 文件添加到 PATH 中。
 
-If you don't know how to add an executable to the PATH on Windows, check these link out:
+如果您不知道如何向 Windows 的 PATH 添加可执行文件，请参考以下链接:
 
 * `Environment variables <http://msdn.microsoft.com/en-us/library/ms682653.aspx>`_
 * `How to manage environment variables in Windows XP <http://support.microsoft.com/kb/310519>`_
 
 
-Using Chrome WebDriver
+使用 Chrome WebDriver
 ----------------------
 
-To use the Chrome driver, all you need to do is pass the string ``chrome`` when you create
-the ``Browser`` instance:
+要使用 Chrome driver, 你只需要在创建 ``Browser`` 实例时传入字符串 ``chrome``：
 
 .. highlight:: python
 
@@ -122,15 +120,15 @@ the ``Browser`` instance:
     from splinter import Browser
     browser = Browser('chrome')
 
-**Note:** if you don't provide any driver to ``Browser`` function, ``firefox`` will be used.
+**注意:** 如果你不为 ``Browser`` 指定 driver, 那么会默认使用 ``firefox``。
 
-**Note:** if you have trouble with ``$HOME/.bash_profile``, you can try ``$HOME/.bashrc``.
+**注意:** 如果你在使用 ``$HOME/.bash_profile`` 时遇到问题, 可以试试 ``$HOME/.bashrc``。
 
-Using headless option for Chrome
+使用 Chrome headless
 --------------------------------
 
-Starting with Chrome 59, we can run Chrome as a headless browser.
-Make sure you read `google developers updates <https://developers.google.com/web/updates/2017/05/nic59#headless>`_
+从Chrome 59开始，我们可以运行 Chrome 作为一个 headless 浏览器。
+使用前请阅读 `google developers updates <https://developers.google.com/web/updates/2017/05/nic59#headless>`_
 
 .. highlight:: python
 
@@ -139,11 +137,10 @@ Make sure you read `google developers updates <https://developers.google.com/web
     from splinter import Browser
     browser = Browser('chrome', headless=True)
 
-Using emulation mode in Chrome
+使用 Chrome 仿真模式
 ------------------------------
 
-Chrome options can be passed to customize Chrome's behaviour; it is then possible to leverage the
-experimental emulation mode.
+可以通过 Chrome options 定制 Chrome 的模式，从而开启实验性的仿真模式。
 
 .. highlight:: python
 
@@ -159,10 +156,10 @@ experimental emulation mode.
     browser = Browser('chrome', options=chrome_options)
 
 
-refer to `chrome driver documentation <https://sites.google.com/a/chromium.org/chromedriver/mobile-emulation>`_
+详细内容请参考 `chrome driver documentation <https://sites.google.com/a/chromium.org/chromedriver/mobile-emulation>`_
 
 
-API docs
+API 文档
 --------
 
 .. autoclass:: splinter.driver.webdriver.chrome.WebDriver
