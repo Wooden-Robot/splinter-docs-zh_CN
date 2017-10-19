@@ -7,17 +7,15 @@
     :keywords: splinter, python, tutorial, documentation, cookies
 
 ++++++++++++++++++++
-Cookies manipulation
+操控 Cookies
 ++++++++++++++++++++
 
-It is possible to manipulate cookies using the `cookies` attribute from a
-`Browser` instance. The `cookies` attribute is a instance of a `CookieManager`
-class that manipulates cookies, like adding and deleting them.
+可以通过 `Browser` 实例的 `cookies` 属性操控 cookies。`cookies` 属性是可以增加和删除 cookie 的 `CookieManager` 类的一个实例。
 
-Create cookie
+创建 cookie
 -------------
 
-To add a cookie use the add method:
+使用 `add` 方法增加一个 cookie：
 
 .. highlight:: python
 
@@ -25,10 +23,10 @@ To add a cookie use the add method:
 
     browser.cookies.add({'whatever': 'and ever'})
 
-Retrieve all cookies
+获取所有的 cookies
 --------------------
 
-To retrieve all cookies use the `all` method:
+使用 `all` 方法获取所有的 cookies:
 
 .. highlight:: python
 
@@ -36,29 +34,28 @@ To retrieve all cookies use the `all` method:
 
     browser.cookies.all()
 
-Delete a cookie
+删除一个 cookie
 ---------------
 
-You can delete one or more cookies with the ``delete`` method:
+你可以通过 ``delete`` 方法删除一个或者更多的 cookies:
 
 .. highlight:: python
 
 ::
 
-    browser.cookies.delete('mwahahahaha')  # deletes the cookie 'mwahahahaha'
-    browser.cookies.delete('whatever', 'wherever')  # deletes two cookies
+    browser.cookies.delete('mwahahahaha')  # 删除 'mwahahahaha' 这个 cookie
+    browser.cookies.delete('whatever', 'wherever')  # 删除两个 cookies
 
-Delete all cookies
+删除所有的 cookies
 ------------------
 
-You can also delete all cookies: just call the ``delete`` method without any
-parameters:
+不要任何参数，仅仅需要调用 ``delete`` 方法就可以删除所有的 cookies：
 
 .. highlight:: python
 
 ::
 
-    browser.cookies.delete()  # deletes all cookies
+    browser.cookies.delete()  # 删除所有的 cookies
 
-For more details check the API reference of the
-:class:`CookieManager <splinter.cookie_manager.CookieManagerAPI>` class.
+更多信息请参考
+:class:`CookieManager <splinter.cookie_manager.CookieManagerAPI>` 类的 API 文档。
