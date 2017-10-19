@@ -12,7 +12,7 @@ Firefox WebDriver
 
 .. module:: splinter.driver.webdriver.firefox
 
-Firefox WebDriver is provided by Selenium 2.0. To use it, you need to install Selenium 2.0 via pip:
+Firefox WebDriver由Selenium 2.0提供。要使用它，您需要通过pip安装Selenium 2.0：
 
 .. highlight:: bash
 
@@ -21,14 +21,13 @@ Firefox WebDriver is provided by Selenium 2.0. To use it, you need to install Se
     $ [sudo] pip install selenium
 
 
-It's important to note that you also need to have `Firefox <http://firefox.com>`_ and `geckodriver <https://github.com/mozilla/geckodriver/releases>`_ installed in your machine and available on `PATH` environment variable.
-Once you have it installed, there is nothing you have to do, just use it :)
+重要的是要注意，您还需要在机器中安装 `Firefox <http://firefox.com>`_ 和 `geckodriver <https://github.com/mozilla/geckodriver/releases>`_  并且可以在 `PATH` 环境变量中使用。
+一旦你安装了，你没有什么你要做，就可以使用它:)
 
-Using Firefox WebDriver
+使用Firefox WebDriver
 -----------------------
 
-To use the Firefox driver, all you need to do is pass the string ``firefox`` when you create
-the ``Browser`` instance:
+您只需要使用Firefox驱动程序，您只需要在 ``Browser`` 方法中写入传递 ``firefox`` 字符串：
 
 .. highlight:: python
 
@@ -37,13 +36,13 @@ the ``Browser`` instance:
     from splinter import Browser
     browser = Browser('firefox')
 
-**Note:** if you don't provide any driver to ``Browser`` function, ``firefox`` will be used.
+**注意：** 如果您在 ``Browser`` 方法中未写入驱动器程序名称，则默认使用 ``firefox`` 驱动方式。
 
-How to use a specific profile for Firefox
+如何使用Firefox的特定配置文件
 -----------------------------------------
 
-You can specify a `Firefox profile <http://support.mozilla.com/en-US/kb/Profiles>`_ for using on ``Browser`` function
-using the ``profile`` keyword (passing the name of the profile as a ``str`` instance):
+您可以用 ``Browser`` 方法中的 ``profile`` 关键词选项来设定 `Firefox 配置文件 <http://support.mozilla.com/en-US/kb/Profiles>`_
+(以配置名称 ``字符串`` 形式作传递):
 
 .. highlight:: python
 
@@ -52,12 +51,12 @@ using the ``profile`` keyword (passing the name of the profile as a ``str`` inst
     from splinter import Browser
     browser = Browser('firefox', profile='my_profile')
 
-If you don't specify a profile, a new temporary profile will be created (and deleted when you ``close`` the browser).
+如果不指定配置文件，将创建一个新的临时配置文件（并在 ``close`` 浏览器时删除）。
 
-How to use specific extensions for Firefox
+如何使用Firefox的扩展插件
 ------------------------------------------
 
-An extension for firefox is a .xpi archive. To use an extension in Firefox webdriver profile you need to give the path of the extension, using the extensions keyword (passing the extensions as a ``list`` instance):
+firefox的扩展插件是.xpi类型的文件格式。要在Firefox webdriver配置文件中使用扩展插件，您需要使用extensions关键字选项（扩展插件以为 ``列表`` 形式作实例传递）来给出扩展插件路径：
 
 .. highlight:: python
 
@@ -66,7 +65,7 @@ An extension for firefox is a .xpi archive. To use an extension in Firefox webdr
     from splinter import Browser
     browser = Browser('firefox', extensions=['extension1.xpi', 'extension2.xpi'])
 
-If you give an extension, after you close the browser, the extension will be deleted from the profile, even if is not a temporary one.
+如果您使用了扩展程序，则在关闭浏览器后，即使不是临时扩展插件，扩展插件也将将从配置文件中删除。
 
 How to use selenium capabilities for Firefox
 --------------------------------------------
@@ -80,7 +79,7 @@ How to use selenium capabilities for Firefox
 You can pass any selenium `read-write DesiredCapabilities parameters <https://code.google.com/p/selenium/wiki/DesiredCapabilities#Read-write_capabilities>`_ for Firefox.
 
 
-API docs
+API文档
 --------
 
 .. autoclass:: WebDriver
