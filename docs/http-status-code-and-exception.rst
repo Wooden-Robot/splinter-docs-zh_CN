@@ -7,35 +7,31 @@
     :keywords: splinter, python, tutorial, documentation, exception, http error, status code
 
 ++++++++++++++++++++++++++++++++++++++++++++
-Dealing with HTTP status code and exceptions
+处理HTTP状态代码和异常
 ++++++++++++++++++++++++++++++++++++++++++++
 
-Dealing with HTTP status code
+处理HTTP状态代码
 -----------------------------
 
-It's also possible to check which HTTP status code a browser.visit gets. You can use ``status_code.is_success`` to do the work
-for you or you can compare the status code directly:
+还可以检查browser.visit获取的HTTP状态代码。您可以使用 ``status_code.is_success`` 为您做的工作，或者您可以直接比较状态代码：
 
 .. highlight:: python
 
 ::
 
-    browser.visit('http://cobrateam.info')
+    browser.visit('https://baidu.com')
     browser.status_code.is_success() # True
     # or
     browser.status_code == 200 # True
     # or
     browser.status_code.code # 200
 
-The difference between those methods is that if you get a redirect (or something that is not an HTTP error),
-``status_code.is_success`` will consider your response as successfully. The numeric status code can be accessed via
-``status_code.code``.
+这些方法的区别在于，如果您获得重定向（某些情况或许不是HTTP出错）， ``status_code.is_success`` 则会将您的响应视为成功。可以通过 ``status_code.code``  访问数字状体代码。
 
-Handling HTTP exceptions
+处理HTTP异常
 ------------------------
 
-Whenever you use the ``visit`` method, Splinter will check if the response is success or not, and if not, it will raise an
-HttpResponseError exception. But don't worry, you can easily catch it:
+每当使用访问方法时，Splinter将检查响应是否成功，如果不是，则会引发HttpResponseError异常。但别担心，你可以很容易地捕获它：
 
 .. highlight:: python
 
@@ -48,4 +44,4 @@ HttpResponseError exception. But don't worry, you can easily catch it:
 
 ..
 
-    **Note:** ``status_code`` and this HTTP exception handling is available only for selenium webdriver
+    **注意:**  ``status_code`` 和HTTP异常处理仅适用于selenium webdriver。
