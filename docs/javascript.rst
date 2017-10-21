@@ -7,10 +7,10 @@
     :keywords: splinter, python, tutorial, javascript
 
 ++++++++++++++++++++
-Executing javascript
+执行 javascript
 ++++++++++++++++++++
 
-You can easily execute JavaScript, in drivers which support it:
+如果 driver 可执行 javascript，那么你可以通过下面的例子很方便地执行 javascript 代码：
 
 .. highlight:: python
 
@@ -18,7 +18,7 @@ You can easily execute JavaScript, in drivers which support it:
 
     browser.execute_script("$('body').empty()")
 
-You can return the result of the script:
+你可以获取到执行脚本后返回的值:
 
 .. highlight:: python
 

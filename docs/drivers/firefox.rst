@@ -38,6 +38,20 @@ Firefox WebDriver由Selenium 2.0提供。要使用它，您需要通过pip安装
 
 **注意：** 如果您在 ``Browser`` 方法中未写入驱动器程序名称，则默认使用 ``firefox`` 驱动方式。
 
+
+使用 Firefox headless
+-----------------------
+
+从 Firefox 55开始, 我们可以在 Linux 系统上使用 Firefox headless。
+
+.. highlight:: python
+
+::
+
+    from splinter import Browser
+    browser = Browser('firefox', headless=True)
+
+
 如何使用Firefox的特定配置文件
 -----------------------------------------
 

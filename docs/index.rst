@@ -75,7 +75,7 @@ Splinter 是用 Python 开发的一个开源web自动化测试的工具集。
 -------------
 
 * :doc:`处理 HTTP 状态码和异常 </http-status-code-and-exception>`
-* :doc:`与 iframes, alerts 和 prompts 互动 </iframes-and-alerts>`
+* :doc:`与 iframes, alerts 和 prompts 交互 </iframes-and-alerts>`
 
 Drivers
 -------
@@ -96,6 +96,7 @@ The following drivers don't open a browser to run your actions (but has its own 
 specific docs for each driver):
 
 * :doc:`Chrome WebDriver </drivers/chrome>`
+* :doc:`Firefox WebDriver </drivers/firefox>`
 * :doc:`Phantomjs WebDriver </drivers/phantomjs>`
 * :doc:`zope.testbrowser </drivers/zope.testbrowser>`
 * :doc:`django client </drivers/django>`
