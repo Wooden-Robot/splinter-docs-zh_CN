@@ -7,13 +7,13 @@
     :keywords: splinter, python, tutorial, alerts, prompts, iframes, acceptance tests
 
 ++++++++++++++++++++++++++
-Frames, alerts and prompts
+Frames, alerts 和 prompts
 ++++++++++++++++++++++++++
 
-Using iframes
+使用 iframes
 -------------
 
-You can use the ``get_iframe`` method and the ``with`` statement to interact with iframes. You can pass the iframe's name, id, or index to ``get_iframe``.
+你可以通过 ``get_iframe`` 方法和 ``with`` 声明与 iframes 进行交互。你可以向 ``get_iframe`` 方法传出 iframe 的 name, id, 或者 index 来获取 iframe。
 
 .. highlight:: python
 
@@ -23,14 +23,14 @@ You can use the ``get_iframe`` method and the ``with`` statement to interact wit
         iframe.do_stuff()
 
 
-Handling alerts and prompts
+处理 alerts 和 prompts
 ---------------------------
 
-    Chrome support for alerts and prompts is new in Splinter 0.4.
+    从 Splinter 0.4版本开始，Chrome 浏览器支持与 alerts 和 prompts 的交互。
 
-**IMPORTANT:** Only webdrivers (Firefox and Chrome) has support for alerts and prompts.
+**注意:** 只有 Firefox 和 Chrome 支持与 alerts 和 prompts 进行交互。
 
-You can deal with alerts and prompts using the ``get_alert`` method.
+你可以使用 ``get_alert`` 方法来处理 alerts 和 prompts。
 
 .. highlight:: python
 
@@ -42,7 +42,7 @@ You can deal with alerts and prompts using the ``get_alert`` method.
     alert.dismiss()
 
 
-In case of prompts, you can answer it using the ``fill_with`` method.
+对于 prompts, 你可以使用 ``fill_with`` 方法进行回复。
 
 .. highlight:: python
 
@@ -55,7 +55,7 @@ In case of prompts, you can answer it using the ``fill_with`` method.
     prompt.dismiss()
 
 
-You can use the ``with`` statement to interacte with both alerts and prompts too.
+你也可以使用 ``with`` 声明同时与 alerts 和 prompts 进行交互。
 
 .. highlight:: python
 
@@ -64,6 +64,6 @@ You can use the ``with`` statement to interacte with both alerts and prompts too
     with browser.get_alert() as alert:
         alert.do_stuff()
 
-If there's not any prompt or alert, ``get_alert`` will return ``None``.
-Remember to always use at least one of the alert/prompt ending methods (accept and dismiss).
-Otherwise your browser instance will be frozen until you accept or dismiss the alert/prompt correctly.
+如果页面没有 prompt 或者 alert，``get_alert`` 会返回 ``None``。
+记住至少要使用一个 alert/prompt 的结束方法(accept 和 dismiss)。
+否则你的浏览器会处于休眠状态不能进行其他操作，除非你对 alert/prompt 正确地选择了accept 或者 dismiss。
