@@ -12,9 +12,9 @@ Phantomjs WebDriver
 
 .. module:: splinter.driver.webdriver.phantomjs
 
-PhantomJS is a headless WebKit scriptable with a JavaScript API, to use the driver first you must
-`install <http://phantomjs.org/download.html>`_ it in your machine.
-The Phantomjs WebDriver is provided by Selenium 2.0, thus you need to install Selenium 2.0 via pip:
+PhantomJS 是一个基于 headless WebKit 的服务器端 JavaScript API, 使用之前你需要
+`下载 <http://phantomjs.org/download.html>`_ 它到电脑中。
+Phantomjs WebDriver 依赖于 Selenium 2.0，所以你需要使用 pip 安装 Selenium 2.0 版本:
 
 .. highlight:: bash
 
@@ -22,11 +22,10 @@ The Phantomjs WebDriver is provided by Selenium 2.0, thus you need to install Se
 
     $ [sudo] pip install selenium
 
-Using Phantomjs WebDriver
+使用 Phantomjs WebDriver
 -------------------------
 
-To use the Phantomjs driver, all you need to do is pass the string ``phantomjs`` when you create
-the ``Browser`` instance:
+你只需要在生成 ``Browser`` 实例时传入字符串 ``phantomjs`` 就可以使用 Phantomjs driver 了。
 
 .. highlight:: python
 
@@ -35,9 +34,10 @@ the ``Browser`` instance:
     from splinter import Browser
     browser = Browser('phantomjs')
 
-**Note:** if you don't provide any driver to ``Browser`` function, ``firefox`` will be used.
+**注意:** 如果你不为 ``Browser`` 指定 driver, 那么会默认使用 ``firefox``。
 
-PhantomJS can also be used from a custom path. To do this pass the executable path as a dictionary to the `**kwargs` argument. The dictionary should be set up with `executable_path` as the key and the value set to the path to the executable file.
+PhantomJS 也可以通过自定义路径来使用。你需要向 `**kwargs` 参数传入一个包含可执行路径的字典。
+这个字典需要有一个 key 为 `executable_path`，value 为可执行文件路径的值。
 
 .. highlight:: python
 
