@@ -7,14 +7,14 @@
     :keywords: splinter, python, tutorial, how to install, installation, Flask
 
 ++++++++++++
-Flask client
+Flask客户端
 ++++++++++++
 
 .. module:: splinter.driver.flaskclient
 
-To use the ``flask`` driver, you need to install `Flask <https://pypi.python.org/pypi/Flask>`_, 
-`lxml <https://pypi.python.org/pypi/lxml>`_ and `cssselect <http://pypi.python.org/pypi/cssselect>`_. 
-You can install all of them in one step by running:
+要使用 ``flask`` 驱动, 你需要安装 `Flask <https://pypi.python.org/pypi/Flask>`_, 
+`lxml <https://pypi.python.org/pypi/lxml>`_ 和 `cssselect <http://pypi.python.org/pypi/cssselect>`_. 
+您可以通过运行以下步骤一次安装它们：
 
 .. highlight:: bash
 
@@ -22,11 +22,10 @@ You can install all of them in one step by running:
 
     $ pip install splinter[flask]
 
-Using Flask client
+使用Flask客户端
 -------------------
 
-To use the ``flask`` driver, you'll need to pass the string ``flask`` and an app instances via the
-``app`` keyword argument when you create the ``Browser`` instance:
+使用 ``flask`` 驱动,您需要在创建 ``Browser`` 实例时，需要填入 ``flask`` 字符串和设定关键词参数 ``app`` ：
 
 .. highlight:: python
 
@@ -35,9 +34,9 @@ To use the ``flask`` driver, you'll need to pass the string ``flask`` and an app
     from splinter import Browser
     browser = Browser('flask', app=app)
 
-**Note:** if you don't provide any driver to ``Browser`` function, ``firefox`` will be used.
+**注意：** 如果您不提供任何驱动程序模式字符串给 ``Browser`` 方法，``firefox`` 将被默认使用。
 
-API docs
+API文档
 --------
 
 .. autoclass:: FlaskClient
