@@ -11,8 +11,7 @@
 Remote WebDriver
 ++++++++++++++++
 
-Remote WebDriver is provided by Selenium2. To use it, you need to install
-Selenium2 via pip:
+Remote WebDriver 由 Selenium2 提供。如果你要使用它, 请先通过pip安装 Selenium2:
 
 .. highlight:: bash
 
@@ -20,26 +19,22 @@ Selenium2 via pip:
 
     $ [sudo] pip install selenium
 
-Setting up the Remote WebDriver
+远程 WebDriver
 -------------------------------
 
-To use the remote web driver, you need to have access to a Selenium remote
-webdriver server. Setting up one of these servers is beyond the scope of this
-document. However, some companies provide access to a `Selenium Grid`_ as a service.
+为了使用远程 web driver, 你需要访问 Selenium 远程 webdriver 服务器。本文档不介绍如何设置
+服务器。不过有些公司会提供 `Selenium Grid`_ 作为服务器访问。
 
 
-Using the Remote WebDriver
+使用远程 WebDriver
 --------------------------
 
-To use the Remote WebDriver, you need to pass ``driver_name="remote"``
-and ``url=<remote server url>`` when you create the ``Browser`` instance.
+为了使用远程 WebDriver，在实例化 ``Browser`` 时，你需要传入 ``driver_name="remote"`` 和 ``url=<remote server url>``。
 
-You can also pass additional arguments that
-correspond to Selenium `DesiredCapabilities`_ arguments.
+你也可以通过传递与 Selenium `DesiredCapabilities`_ 参数对应的其他参数.
 
-Here is an example that uses `Sauce Labs`_ (a company that provides Selenium
-remote webdriver servers as a service) to request an Internet Explorer 9
-browser instance running on Windows 7.
+以下是当你使用 `Sauce Labs`_ (一个专门提供 Selenium 远程 webdriver 服务器的公司) 来请求
+在 Windows 7 上运行的 Internet Explorer 9 浏览器实例的示例。
 
 .. highlight:: python
 
