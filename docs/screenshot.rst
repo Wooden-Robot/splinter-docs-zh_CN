@@ -7,10 +7,10 @@
     :keywords: splinter, python, tutorial, screenshot
 
 ++++++++++++++++++
-Taking screenshots
+截图
 ++++++++++++++++++
 
-Splinter doesn't support taking screenshots by itself, to take screenshots you must to call the driver's `take_screenshot` method:
+Splinter 本身并不支持截图，你必须使用 driver 的 `take_screenshot` 方法进行截图。
 
 .. highlight:: python
 
