@@ -81,6 +81,7 @@ firefox的扩展插件是.xpi类型的文件格式。要在Firefox webdriver配�
 
 如果您使用了扩展程序，则在关闭浏览器后，即使不是临时扩展插件，扩展插件也将将从配置文件中删除。
 
+******以下校对中*******
 How to use selenium capabilities for Firefox
 --------------------------------------------
 
