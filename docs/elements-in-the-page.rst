@@ -152,7 +152,7 @@ You can also use ``type`` and ``fill`` methods in an element:
 
 如果元素可见会返回True，不可见则返回False。
 
-
+******以下校对中*******
 Verifying if element has a className
 ------------------------------------
 
